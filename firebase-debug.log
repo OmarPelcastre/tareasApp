@@ -1,0 +1,48 @@
+[debug] [2019-12-13T10:25:49.038Z] ----------------------------------------------------------------------
+[debug] [2019-12-13T10:25:49.056Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-12-13T10:25:49.056Z] CLI Version:   7.3.2
+[debug] [2019-12-13T10:25:49.056Z] Platform:      darwin
+[debug] [2019-12-13T10:25:49.056Z] Node Version:  v10.16.3
+[debug] [2019-12-13T10:25:49.359Z] Time:          Fri Dec 13 2019 04:25:49 GMT-0600 (GMT-06:00)
+[debug] [2019-12-13T10:25:49.359Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-12-13T10:25:49.445Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-13T10:25:49.445Z] > authorizing via signed-in user
+[debug] [2019-12-13T10:25:49.446Z] [iam] checking project listaactividades-d8238 for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2019-12-13T10:25:49.448Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-12-13T10:25:49.449Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-12-13T10:25:50.917Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-13T10:25:51.240Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/listaactividades-d8238:testIamPermissions  
+
+[debug] [2019-12-13T10:25:51.952Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-13T10:25:51.995Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/listaactividades-d8238  
+ 
+[debug] [2019-12-13T10:25:52.423Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'listaactividades-d8238'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-12-13T10:25:52.453Z] >>> HTTP REQUEST PUT https://listaactividades-d8238.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2019-12-13T10:25:53.024Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database listaactividades-d8238 is valid
+[debug] [2019-12-13T10:25:53.027Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/listaactividades-d8238/versions  
+
+[debug] [2019-12-13T10:25:54.265Z] <<< HTTP RESPONSE 200
+[info] i  hosting[listaactividades-d8238]: beginning deploy...
+[info] i  hosting[listaactividades-d8238]: found 24 files in dist/ListaActividades
+[debug] [2019-12-13T10:25:54.443Z] [hosting] hash cache [ZGlzdC9MaXN0YUFjdGl2aWRhZGVz] load error: lines is not defined
+[debug] [2019-12-13T10:25:57.621Z] [hosting] hash cache [ZGlzdC9MaXN0YUFjdGl2aWRhZGVz] stored for 24 files
+[debug] [2019-12-13T10:25:57.621Z] [hosting][hash queue][FINAL]
+[debug] [2019-12-13T10:25:57.622Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/listaactividades-d8238/versions/17845aad5b596462:populateFiles  
+ <request body omitted>
+[debug] [2019-12-13T10:25:58.616Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-13T10:25:58.660Z] [hosting][populate queue][FINAL]
+[debug] [2019-12-13T10:25:58.661Z] [hosting] uploads queued: 23
