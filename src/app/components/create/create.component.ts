@@ -41,7 +41,6 @@ export class CreateComponent implements OnInit {
     this.initHoras();
     this.initMeses();
     this.tareas = [];
-    this.tareas.push("");
   }
 
 
@@ -55,22 +54,12 @@ export class CreateComponent implements OnInit {
       tareas: formValue.telefonos
 
     }
-    // activity.activity = formValue.nombre;
-    // //activity.tareas = formValue.telefonos;
-    // activity.tareas = ['hola', 'prueba']
-    // activity.dia = this.dia;
-    // activity.hora = this.hora;
-    // activity.mes = this.mes;
-    // console.log(activity);
-
+    
     this.firestoreService.createActivity(this.activity).then(res => {
       console.log(res);
       this.router.navigate(['/home']);
     });
   }
-
-
-
 
   get getTelefonos() {
     return this.miFormulario.get('telefonos') as FormArray;

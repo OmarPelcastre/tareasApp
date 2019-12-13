@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { CreateComponent } from './components/create/create.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -24,6 +24,7 @@ import { HomeComponent } from './components/home/home.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule,
+    AngularFirestoreModule,
     ReactiveFormsModule
   ],
   providers: [
