@@ -7,6 +7,7 @@
           aria-expanded="true" aria-controls="collapseOne">
           {{activity.activity}} {{activity.dia}} de {{activity.mes}} {{activity.hora}}
         </button>
+        <button class="btn btn-danger" (click)="delete(activity.id)">eliminar</button>
       </h2>
     </div>
 

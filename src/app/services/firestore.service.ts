@@ -13,30 +13,27 @@ export class FirestoreService {
   ) { }
 
 
-  //Crea un nuevo gato
-  public createActivity(data: Activity){
+
+  public createActivity(data: Activity) {
     return this.firestore.collection('activities').add(data);
   }
 
-  // createActivity(data) {
-  //   return new Promise<any>((resolve, reject) =>{
-  //       this.firestore
-  //           .collection("activities")
-  //           .add(data)
-  //           .then(res => {}, err => reject(err));
-  //   });
-//}
 
-  //Obtiene un gato
   public getActivity(documentId: string) {
-  return this.firestore.collection('activities').doc(documentId).snapshotChanges();
-}
-  //Obtiene todos los gatos
+    return this.firestore.collection('activities').doc(documentId).snapshotChanges();
+  }
+
   public getActivities() {
-  return this.firestore.collection('activities').snapshotChanges();
-}
-  //Actualiza un gato
+    return this.firestore.collection('activities').snapshotChanges();
+  }
+
   public updateActivity(documentId: string, data: any) {
-  return this.firestore.collection('activities').doc(documentId).set(data);
-}
+    return this.firestore.collection('activities').doc(documentId).set(data);
+  }
+
+  public deleteActivity(documentId: string){
+    return this.firestore.collection('activities').doc(documentId).delete();
+  }
+
+
 }

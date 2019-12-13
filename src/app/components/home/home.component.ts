@@ -39,6 +39,10 @@ export class HomeComponent implements OnInit {
     console.log(this.activities)
   }
 
+  delete(id){
+    this.firestoreService.deleteActivity(id);
+  }
+
 
   imprimir(){
     console.log(this.activities);
