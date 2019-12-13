@@ -1,1 +1,125 @@
-<p>create works!</p>
+<!-- <form #activityForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
+    <p>
+        <label>Nombre</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="activity.activity" class="form-control" required>
+
+    </p>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dia
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="dias">
+            <p class="dropdown-item" *ngFor="let dia of dias" (click)="setDia(dia)">
+                {{dia}}
+            </p>
+        </div>
+    </div>
+    <br>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Mes
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="meses">
+            <p class="dropdown-item" *ngFor="let mes of meses" (click)="setMes(mes)">
+                {{mes}}
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Hora
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="horas">
+            <p class="dropdown-item" *ngFor="let hora of horas" (click)="setHora(hora)">
+                {{hora}}
+            </p>
+        </div>
+    </div>
+
+
+    <div [formGroup]="myTareas">
+        <label>Tareas</label>
+        <div formArrayName="tareasArray" [formGroupName]="pointIndex">
+            <div *ngFor="let terea of tareas; let pointIndex=index">
+                <input type="text" formControlName="tarea" name="pointIndex">
+            </div>
+        </div>
+
+        <button class="btn btn-secondary" (click)="addTarea()">Agregar otra tarea</button>
+    </div>
+
+
+
+    <input type="submit" value="Crear" class="btn btn-success" [disabled]="!activityForm.form.valid">
+
+
+</form> -->
+
+
+<form [formGroup]="miFormulario" (submit)="onSubmit(miFormulario.value)">
+    <div class="form-group">
+        <label for="nombre">Nombre de la Actividad</label>
+        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre de la actividad">
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dia
+        </button>
+        <span>    {{dia}}</span>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="dias">
+            <p class="dropdown-item" *ngFor="let dia of dias" (click)="setDia(dia)">
+                {{dia}}
+            </p>
+        </div>
+    </div>
+    <br>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Mes
+        </button>
+        <span>    {{mes}}</span>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="meses">
+            <p class="dropdown-item" *ngFor="let mes of meses" (click)="setMes(mes)">
+                {{mes}}
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Hora
+        </button>
+        <span>    {{hora}}</span>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="horas">
+            <p class="dropdown-item" *ngFor="let hora of horas" (click)="setHora(hora)">
+                {{hora}}
+            </p>
+        </div>
+    </div>
+
+    <br>
+    <h3>Tareas </h3>
+    <br>
+    <div class="form-group">
+        <div formArrayName="telefonos">
+            <div *ngFor="let item of getTelefonos.controls; let pointIndex=index" [formGroupName]="pointIndex">
+                <input formControlName="tarea"  class="form-control"/>
+                <a class="btn btn-link" (click)="removeTelefono(pointIndex)">eliminar</a>
+            </div>
+        </div>
+        <a class="btn btn-link" (click)="addTelefono()">Agregar otra tarea</a>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear Actividad</button>
+
+</form>

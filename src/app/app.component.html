@@ -1,20 +1,4 @@
-<button type="button" class="btn btn-primary btn-lg" [routerLink]="['/create']">Agregar Actividad</button>
-<div class="accordion" id="accordionExample" *ngIf="activities">
-  <div class="card" *ngFor="let activity of activities">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-          {{activity.activity}}
-        </button>
-      </h2>
-    </div>
+<router-outlet></router-outlet>  
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample"
-    *ngFor="let tarea of activity.tareas">
-      <div class="card-body">
-       {{activity.tareas.indexOf(tarea)+1}}.- {{tarea}}
-      </div>
-    </div>
-  </div>
-</div>
+
+
